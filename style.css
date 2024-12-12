@@ -1,0 +1,207 @@
+* {
+    margin: 0; /* Menghilangkan margin default dari semua elemen */
+    padding: 0; /* Menghilangkan padding default dari semua elemen */
+    box-sizing: border-box; /* Memastikan padding dan border dimasukkan dalam ukuran elemen */
+}
+
+/* Body dan Font */
+body {
+    font-family: 'Arial', sans-serif; /* Mengatur font utama untuk halaman */
+    line-height: 1.6; /* Memberikan jarak antar baris teks */
+    background-color: #f0f8ff; /* Warna latar belakang halaman */
+    color: #333; /* Warna teks utama */
+    text-align: justify; /* Meratakan teks ke kiri dan kanan */
+}
+
+body h2 {
+    text-align: center; /* Memusatkan heading H2 di dalam body */
+}
+
+/* Header */
+header {
+    background-color: #d87093; /* Warna latar belakang header */
+    color: #fff; /* Warna teks di header */
+    padding: 20px 0; /* Memberikan jarak vertikal di dalam header */
+    text-align: center; /* Memusatkan konten header */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Memberikan bayangan untuk efek elevasi */
+}
+
+/* Judul Header */
+header h1 {
+    font-size: 4em; /* Ukuran font besar untuk heading utama */
+    margin-bottom: 10px; /* Jarak bawah untuk memberikan ruang dengan elemen berikutnya */
+}
+
+/* Navigasi */
+nav ul {
+    list-style: none; /* Menghilangkan titik atau angka bawaan pada list */
+    display: inline-flex; /* Membuat list item tampil secara horizontal */
+}
+
+nav li {
+    position: relative; /* Menjadikan elemen sebagai referensi posisi untuk dropdown */
+    margin: 0 20px; /* Memberikan jarak horizontal antar item */
+}
+
+nav a {
+    color: #fff; /* Warna teks tautan */
+    text-decoration: none; /* Menghilangkan garis bawah bawaan */
+    padding: 12px 15px; /* Memberikan jarak dalam tautan */
+    border-radius: 5px; /* Membuat sudut tautan membulat */
+    transition: background-color 0.3s, transform 0.2s; /* Animasi untuk hover */
+    cursor: pointer; /* Menampilkan kursor tangan saat hover */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Warna latar belakang saat hover */
+    transform: scale(1.05); /* Membesarkan elemen saat hover */
+}
+
+/* Dropdown */
+.dropdown {
+    display: none; /* Menyembunyikan menu dropdown secara default */
+    position: absolute; /* Memposisikan dropdown relatif terhadap elemen parent */
+    background-color: #cd7d97; /* Warna latar belakang dropdown */
+    padding: 10px 0; /* Memberikan jarak vertikal dalam dropdown */
+    border-radius: 5px; /* Membulatkan sudut dropdown */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Memberikan bayangan dropdown */
+    z-index: 10; /* Memastikan dropdown muncul di atas elemen lain */
+}
+
+nav li:hover .dropdown {
+    display: block; /* Menampilkan dropdown saat elemen parent di-hover */
+}
+
+.dropdown li {
+    margin: 0; /* Menghilangkan margin antar item di dropdown */
+}
+
+.dropdown a {
+    display: block; /* Menjadikan setiap tautan sebagai blok untuk klik yang mudah */
+    padding: 10px 20px; /* Memberikan jarak di dalam item dropdown */
+    transition: background-color 0.3s; /* Animasi perubahan warna */
+}
+
+.dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Warna latar saat item di-hover */
+}
+
+/* Style untuk Gambar */
+.banner-image {
+    max-width: 100%; /* Membatasi lebar gambar tidak melebihi kontainernya */
+    height: auto; /* Menyesuaikan tinggi sesuai rasio gambar */
+    border-radius: 10px; /* Membuat sudut gambar membulat */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan ringan */
+}
+
+/* Gambar Pengembang */
+.developer-image {
+    width: 450px; /* Lebar gambar khusus */
+    height: auto; /* Menyesuaikan tinggi gambar agar tetap proporsional */
+    display: block; /* Memastikan gambar tampil sebagai blok */
+    margin: 0 auto 15px auto; /* Memusatkan gambar dan memberikan jarak bawah */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan untuk gambar */
+}
+
+/* Konten Section */
+.content-section {
+    display: none; /* Menyembunyikan konten secara default */
+    margin-top: 20px; /* Memberikan jarak atas dari elemen sebelumnya */
+    padding: 20px; /* Memberikan jarak di dalam konten */
+    background-color: #ffffff; /* Warna latar konten */
+    border-radius: 10px; /* Membuat sudut konten membulat */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Memberikan bayangan ringan pada konten */
+}
+
+.content-section.active {
+    display: block; /* Menampilkan konten aktif */
+}
+
+.content-section h2 {
+    color: #000000; /* Warna teks heading */
+    margin-bottom: 10px; /* Memberikan jarak bawah heading */
+    font-size: 1.8em; /* Ukuran font besar untuk heading */
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Mengubah list menjadi vertikal pada layar kecil */
+    }
+
+    nav li {
+        margin-bottom: 10px; /* Memberikan jarak antar item vertikal */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #e667db; /* Warna latar belakang footer */
+    color: #fff; /* Warna teks footer */
+    padding: 10px 0; /* Memberikan jarak vertikal di dalam footer */
+    text-align: center; /* Memusatkan teks dalam footer */
+    position: relative; /* Menjadikan footer sebagai elemen relatif */
+}
+
+footer p {
+    margin: 0; /* Menghilangkan margin default paragraf */
+    font-size: 0.9em; /* Ukuran font lebih kecil */
+}
+
+/* Tiga Kolom Bawah Navbar */
+.container {
+    display: grid; /* Menggunakan grid untuk tata letak */
+    grid-template-columns: 200px auto 300px; /* Tiga kolom dengan ukuran tertentu */
+    gap: 10px; /* Memberikan jarak antar kolom */
+    padding: 20px; /* Memberikan jarak dalam kontainer */
+    background-color: #e9ecef; /* Warna latar belakang kontainer */
+}
+
+.kiri, .tengah, .kanan {
+    background-color: #ffffff; /* Warna latar untuk setiap kolom */
+    border-radius: 5px; /* Membulatkan sudut kolom */
+    padding: 20px; /* Memberikan jarak dalam kolom */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan */
+}
+
+.kiri {
+    text-align: center; /* Memusatkan teks dalam kolom kiri */
+}
+
+.logounram img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar kolom */
+    height: auto; /* Mempertahankan rasio aspek gambar */
+    display: block; /* Menghilangkan margin bawaan pada gambar */
+    margin: 0 auto; /* Memusatkan gambar jika diperlukan */
+}
+
+.kanan {
+    width: 100%; /* Agar sesuai dengan ukuran kolom grid */
+    padding: 10px; /* Memberikan jarak dalam kolom */
+    border: 1px solid #ccc; /* Memberikan border abu-abu untuk elemen kanan */
+}
+
+.kanan h2 {
+    font-size: 1.5rem; /* Ukuran font besar untuk heading kolom kanan */
+    margin-bottom: 10px; /* Memberikan jarak bawah heading */
+}
+
+.kanan ul {
+    list-style: none; /* Menghilangkan penanda bawaan pada daftar */
+    padding: 0; /* Menghilangkan padding bawaan pada daftar */
+}
+
+.kanan ul li {
+    margin-bottom: 15px; /* Memberikan jarak antar item dalam daftar */
+}
+
+.kanan ul li a {
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    color: #333; /* Warna teks tautan */
+}
+
+.kanan iframe {
+    width: 100%; /* Menyesuaikan lebar dengan lebar kontainer */
+    height: 200px; /* Sesuaikan tinggi dengan lebar kontainer */
+    border: none; /* Menghilangkan border iframe */
+}
